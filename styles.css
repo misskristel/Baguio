@@ -73,21 +73,33 @@ header {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.445);
+  background-color: rgba(0, 0, 0, 0.401);
   border-bottom: 1px solid var(--extra-light);
 }
 
 .nav__bar {
-  max-width: var(--max-width);
   margin: auto;
   padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.389); /* Adjust the background color and opacity as needed */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  transition: background-color 0.3s ease; /* Optional: Add a smooth transition effect */
+}
+
+/* Optionally, change the styles when scrolling down */
+.nav__bar.scrolled {
+  background-color: rgba(0, 0, 0, 0.401); /* Change to a solid background when scrolling down */
 }
 
 .nav__logo a {
@@ -329,6 +341,7 @@ nav {
   font-weight: 700;
   background-image: url("color.png");
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px var(--extra-light);
 }
@@ -510,4 +523,23 @@ nav {
   .foods__grid {
     grid-template-columns: repeat(2, 1fr);
   } 
+}
+@media (max-width:991px){
+
+  html{
+     font-size: 60%;
+  }
+  
+}
+@media (max-width:768px){
+  html{
+    font-size: 55%;
+ }
+}
+
+@media (max-width:450px){
+
+  html{
+     font-size: 50%;
+  }
 }
